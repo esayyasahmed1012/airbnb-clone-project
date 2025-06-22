@@ -169,3 +169,37 @@ Provides detailed documentation using OpenAPI standards and supports RESTful API
 
 ### 7. Database Optimizations
 Implements indexing and caching strategies to enhance data retrieval speed and reduce database load. This improves overall performance and scalability of the platform.
+
+## API Security
+
+Securing the backend APIs is critical to protect user data, ensure safe transactions, and maintain platform integrity. The following key security measures will be implemented to safeguard the Airbnb clone project:
+
+### Key Security Measures
+
+#### 1. Authentication
+- **Implementation**: Use JSON Web Tokens (JWT) with Django REST Framework to verify user identity for API requests. Refresh tokens will ensure secure session management.
+- **Purpose**: Ensures only registered users access protected endpoints (e.g., `/users/`, `/bookings/`), preventing unauthorized access.
+
+#### 2. Authorization
+- **Implementation**: Role-based access control (RBAC) to restrict actions based on user roles (e.g., guest, host, admin). For example, only hosts can create properties via `/properties/`.
+- **Purpose**: Prevents users from performing actions beyond their privileges, such as deleting another user’s property or accessing admin data.
+
+#### 3. Rate Limiting
+- **Implementation**: Apply rate limiting using Django middleware or Redis to cap API requests per user (e.g., 100 requests/hour).
+- **Purpose**: Mitigates abuse, such as denial-of-service (DoS) attacks, ensuring fair resource usage and system availability.
+
+#### 4. Data Encryption
+- **Implementation**: Use HTTPS for all API communications and encrypt sensitive data (e.g., passwords, payment details) in transit and at rest with AES-256.
+- **Purpose**: Protects user and payment data from interception or breaches, maintaining confidentiality.
+
+#### 5. Input Validation and Sanitization
+- **Implementation**: Validate and sanitize all user inputs on API endpoints to prevent injection attacks (e.g., SQL injection, XSS).
+- **Purpose**: Ensures data integrity and prevents malicious code from compromising the system.
+
+### Importance of Security for Key Project Areas
+
+- **User Management**: Authentication and authorization protect user profiles and credentials, preventing identity theft and unauthorized profile modifications.
+- **Property Management**: Authorization ensures only verified hosts manage their listings, maintaining trust in property data accuracy.
+- **Booking System**: Rate limiting and input validation prevent fraudulent bookings or system overload, ensuring reliable reservations.
+- **Payment Processing**: Data encryption and secure authentication safeguard financial transactions, reducing the risk of fraud or data leaks.
+- **Review System**: Input sanitization prevents malicious content in reviews, preserving platform credibility and user trust.
