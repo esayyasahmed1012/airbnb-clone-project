@@ -145,3 +145,27 @@ The database for the Airbnb clone project is structured around the following key
 - **Properties ↔ Reviews**: One-to-Many. A Property can have multiple Reviews, but each Review is linked to one Property (via `property_id`).
 - **Users ↔ Reviews**: One-to-Many. A User can write multiple Reviews, but each Review is written by one User (via `user_id`).
 - **Bookings ↔ Payments**: One-to-One. Each Booking has one Payment, and each Payment is linked to one Booking (via `booking_id`).
+## Feature Breakdown
+
+The Airbnb clone project includes the following main features to deliver a comprehensive platform for property rentals, user interactions, and transactions:
+
+### 1. User Management
+Enables users to register, authenticate, and manage their profiles securely. This feature supports role-based access (e.g., guest, host, admin) and ensures personalized user experiences.
+
+### 2. Property Management
+Allows hosts to create, update, and delete property listings with details like title, description, and price. It provides users with a robust interface to browse and explore available properties.
+
+### 3. Booking System
+Facilitates users in reserving properties by specifying check-in and check-out dates. This system ensures seamless booking management and availability tracking for properties.
+
+### 4. Payment Processing
+Handles secure payment transactions for bookings, recording details like amount and status. It integrates with payment gateways to ensure reliable and efficient processing.
+
+### 5. Review System
+Permits users to post ratings and comments for properties they’ve stayed at. This feature enhances trust and transparency by showcasing user feedback.
+
+### 6. API Documentation
+Provides detailed documentation using OpenAPI standards and supports RESTful APIs and GraphQL queries. It ensures developers can easily integrate and interact with the backend.
+
+### 7. Database Optimizations
+Implements indexing and caching strategies to enhance data retrieval speed and reduce database load. This improves overall performance and scalability of the platform.
