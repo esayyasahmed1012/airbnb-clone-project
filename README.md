@@ -88,3 +88,13 @@ Team Roles
 Esayyas Ahmed Backend Developer
               Database Administrator
               DevOps Engineer
+Technology Stack
+         Django
+         Django REST Framework
+         PostgreSQL
+         GraphQL
+         Celery
+         Redis
+         Docker
+         CI/CD Pipelines
+         
