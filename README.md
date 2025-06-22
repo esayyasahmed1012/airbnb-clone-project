@@ -97,4 +97,51 @@ Technology Stack
          Redis
          Docker
          CI/CD Pipelines
-         
+## Database Design
+
+The database for the Airbnb clone project is structured around the following key entities, with their important fields and relationships described below:
+
+### Entities
+
+#### 1. Users
+- **id**: Unique identifier for each user (e.g., UUID or integer).
+- **name**: Full name of the user.
+- **email**: User's email address for login and notifications.
+- **password_hash**: Securely hashed password for authentication.
+- **role**: User type (e.g., guest, host, or admin).
+
+#### 2. Properties
+- **id**: Unique identifier for each property.
+- **host_id**: Foreign key linking to the User who owns the property.
+- **title**: Name or title of the property (e.g., "Cozy Beach Cottage").
+- **description**: Detailed description of the property.
+- **price_per_night**: Cost per night in local currency.
+
+#### 3. Bookings
+- **id**: Unique identifier for each booking.
+- **property_id**: Foreign key linking to the booked Property.
+- **user_id**: Foreign key linking to the User making the booking.
+- **check_in_date**: Start date of the booking.
+- **check_out_date**: End date of the booking.
+
+#### 4. Reviews
+- **id**: Unique identifier for each review.
+- **property_id**: Foreign key linking to the reviewed Property.
+- **user_id**: Foreign key linking to the User who wrote the review.
+- **rating**: Numerical rating (e.g., 1-5 stars).
+- **comment**: Text content of the review.
+
+#### 5. Payments
+- **id**: Unique identifier for each payment.
+- **booking_id**: Foreign key linking to the associated Booking.
+- **amount**: Total payment amount.
+- **payment_status**: Status of the payment (e.g., pending, completed, failed).
+- **payment_date**: Date and time of the payment.
+
+### Relationships
+- **Users ↔ Properties**: One-to-Many. A User (host) can own multiple Properties, but each Property belongs to one User (via `host_id`).
+- **Properties ↔ Bookings**: One-to-Many. A Property can have multiple Bookings, but each Booking belongs to one Property (via `property_id`).
+- **Users ↔ Bookings**: One-to-Many. A User (guest) can make multiple Bookings, but each Booking is made by one User (via `user_id`).
+- **Properties ↔ Reviews**: One-to-Many. A Property can have multiple Reviews, but each Review is linked to one Property (via `property_id`).
+- **Users ↔ Reviews**: One-to-Many. A User can write multiple Reviews, but each Review is written by one User (via `user_id`).
+- **Bookings ↔ Payments**: One-to-One. Each Booking has one Payment, and each Payment is linked to one Booking (via `booking_id`).
