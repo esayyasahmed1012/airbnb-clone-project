@@ -83,3 +83,8 @@ DELETE /reviews/{review_id}/ - Delete a specific review
 Additional Resources
 System design architecture for hotel booking apps
 Software development team structure
+
+Team Roles
+Esayyas Ahmed Backend Developer
+              Database Administrator
+              DevOps Engineer
